@@ -32,7 +32,6 @@ def main():
     print('cost: {}, path: {}'.format(cost, path))
 
 
-    # plot(points, path)
 
 
 def make_csv(data, file_name):
