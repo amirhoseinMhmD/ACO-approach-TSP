@@ -2,7 +2,6 @@ import math
 import csv
 
 from aco import ACO, Graph
-from plot import plot
 import time
 
 
