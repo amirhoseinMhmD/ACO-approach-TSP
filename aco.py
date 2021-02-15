@@ -3,10 +3,6 @@ import random
 
 class Graph(object):
     def __init__(self, cost_matrix: list, rank: int):
-        """
-        :param cost_matrix:
-        :param rank: rank of the cost matrix
-        """
         self.matrix = cost_matrix
         self.rank = rank
         self.pheromone = [[1 / (rank * rank) for j in range(rank)] for i in range(rank)]
@@ -15,15 +11,6 @@ class Graph(object):
 class ACO(object):
     def __init__(self, ant_count: int, generations: int, alpha: float, beta: float, rho: float, q: int,
                  strategy: int):
-        """
-        :param ant_count:
-        :param generations:
-        :param alpha: relative importance of pheromone
-        :param beta: relative importance of heuristic information
-        :param rho: pheromone residual coefficient
-        :param q: pheromone intensity
-        :param strategy: pheromone update strategy. 0 - ant-cycle, 1 - ant-quality, 2 - ant-density
-        """
         self.Q = q
         self.rho = rho
         self.beta = beta
@@ -40,9 +27,6 @@ class ACO(object):
                     graph.pheromone[i][j] += ant.pheromone_delta[i][j]
 
     def solve(self, graph: Graph):
-        """
-        :param graph:
-        """
         best_cost = float('inf')
         best_solution = []
         for gen in range(self.generations):
